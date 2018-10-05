@@ -1,6 +1,7 @@
 package pl.coderslab.game1;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
@@ -9,7 +10,23 @@ public class Main {
 		Random r = new Random();
 		int random = r.nextInt(100)+1;    //max = 100, min = 1
 
-		System.out.println(random);
+		System.out.println(random);  //todo usunąć
+
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Zgadnij liczbę");
+
+		while(!scan.hasNextInt()) {
+			System.out.println("Podana wartość nie jest lczbą. Wpisz liczbę");
+			scan.next();
+		}
+
+		int number = scan.nextInt();
+
+		System.out.println(number); //todo usunąć
+
+
+
+
 
 	}
 
