@@ -10,10 +10,18 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args){
-		System.out.println(checking());
+
+		int[] lottoNumbers = generateRandomNumbers();
+		int[] userNumbers = askForUserChoice();
+		int matches = countMatches(userNumbers, lottoNumbers);
+
+		System.out.println("Liczba elementów, które trafiłeś: " + matches);
+		System.out.println("Wylosowane liczby: " + Arrays.toString(lottoNumbers));
+		System.out.println("Twoje liczby: " + Arrays.toString(userNumbers));
+
 	}
 
-	public static int[] randomArr() {
+	public static int[] generateRandomNumbers() {
 		Random r =  new Random();
 		int[] array = new int[6];
 
@@ -29,7 +37,7 @@ public class Main {
 		return array;
 	}
 
-	public static int[] userChoice(){
+	public static int[] askForUserChoice(){
 		Scanner scan = new Scanner(System.in);
 		int[] numbers = new int[6];
 		for (int i=0; i<6; i++) {
@@ -54,17 +62,14 @@ public class Main {
 
 	}
 
-	public static String checking() {
-		int[] userArray = userChoice();
-		int[] lottoArray = randomArr();
+	public static int countMatches(int[] userArray, int[] lottoArray) {
 		int count = 0;
 		for (int i = 0; i<6; i++) {
 			if (ArrayUtils.contains(lottoArray, userArray[i])) {
 				count++;
 			}
 		}
-	return "Liczba elementów, które trafiłeś: " + count + "\n Wylosowane liczby to: " + Arrays.toString(lottoArray)
-			+ "\n Twoje liczby to: " + Arrays.toString(userArray);
+		return count;
 	}
 
 }
