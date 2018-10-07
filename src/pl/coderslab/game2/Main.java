@@ -10,8 +10,7 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args){
-		System.out.println(Arrays.toString(randomArr()));
-		System.out.println(Arrays.toString(userChoice()));
+		System.out.println(checking());
 	}
 
 	public static int[] randomArr() {
@@ -55,9 +54,17 @@ public class Main {
 
 	}
 
-
-//	public static checking() {
-//
-//	}
+	public static String checking() {
+		int[] userArray = userChoice();
+		int[] lottoArray = randomArr();
+		int count = 0;
+		for (int i = 0; i<6; i++) {
+			if (ArrayUtils.contains(lottoArray, userArray[i])) {
+				count++;
+			}
+		}
+	return "Liczba elementów, które trafiłeś: " + count + "\n Wylosowane liczby to: " + Arrays.toString(lottoArray)
+			+ "\n Twoje liczby to: " + Arrays.toString(userArray);
+	}
 
 }
