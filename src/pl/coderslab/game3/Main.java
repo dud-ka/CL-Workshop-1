@@ -11,7 +11,12 @@ public class Main {
 		int min = 0;
 		int max = 1000;
 		label:
-		for(int i =1; i<=10;i++) {
+		for(int i =1; i<=11;i++) {
+
+			if (i>10) {
+				System.out.println("Nie oszukuj!");
+				break;
+			}
 			int guess = ((max - min) / 2) + min;
 
 			System.out.println(i+". Zgaduję " + guess);
@@ -34,6 +39,7 @@ public class Main {
 					System.out.println("Nie oszukuj!");
 					break;
 			}
+
 		}
 	}
 }

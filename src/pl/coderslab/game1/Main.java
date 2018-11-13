@@ -11,8 +11,7 @@ public class Main {
 		int random = r.nextInt(100)+1;    //max = 100, min = 1
 		int number = 0;
 
-//		System.out.println(random);
-		System.out.println("Zgadnij liczbę");
+		System.out.println("Zgadnij liczbę z przedziału 1 - 100");
 
 		while(!(number == random)) {
 			while(!scan.hasNextInt()) {
@@ -34,3 +33,7 @@ public class Main {
 	}
 
 }
+
+
+
+

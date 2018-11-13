@@ -7,7 +7,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		String dice = "3D10";
+		String dice = "D6";
 		System.out.println(diceSimulation(dice));
 
 	}
